@@ -1,12 +1,6 @@
 {
-  "name": "foundation-libsass-template",
+  "name": "HF_DEV",
   "dependencies": {
-    "foundation": "zurb/bower-foundation",
-    "slick.js": "~1.4.1",
-    "google-map": "GoogleWebComponents/google-map#~0.4.2",
-    "angular-local-storage": "~0.1.5"
-  },
-  "devDependencies": {
-    "handlebars": "~3.0.3"
+    "foundation": "zurb/bower-foundation"
   }
 }
