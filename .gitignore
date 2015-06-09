@@ -1,0 +1,20 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+*.DS_Store
+*.ideas
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+THEMENAME/assets/node_modules
+THEMENAME/assets/bower_components

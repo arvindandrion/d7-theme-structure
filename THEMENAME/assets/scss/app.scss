@@ -1,0 +1,17 @@
+@import "functions";
+@import "settings";
+@import "foundation";
+@import "bourbon";
+@import "colors";
+
+/*****************************************
+Modules
+*****************************************/
+@import "modules/components";
+@import "modules/base";
+@import "modules/animate";
+
+/*****************************************
+IE Fixes
+*****************************************/
+@import "ie8";

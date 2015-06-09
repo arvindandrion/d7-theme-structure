@@ -1,0 +1,19 @@
+name = 'THEMENAME'
+description = 'Frontend'
+core = '7.x'
+engine = 'phptemplate'
+screenshot = 'screenshot.png'
+
+version = '2.0'
+
+regions[mobile_menu] = 'Mobile Menu'
+regions[header] = 'Header'
+regions[banner] = 'Banner'
+regions[before_content] = 'Before Content'
+regions[content] = 'Content'
+regions[sidebar] = 'Sidebar'
+regions[after_content] = 'After Content'
+regions[footer] = 'Footer'
+
+stylesheets[all][] = 'assets/css/app.css'
+
