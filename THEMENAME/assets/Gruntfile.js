@@ -40,15 +40,15 @@ module.exports = function(grunt) {
     },
 
     drush: {
-      cc_theme_registry: {
-        args: ['cc', 'theme-registry']
-      },
-      cc_css_js: {
-        args: ['cc', 'css-js']
-      },
       cc_registry: {
-        args: ['cc', 'registry']
+        args: ['cc', 'all']
       }
+      // cc_theme_registry: {
+      //   args: ['cc', 'theme-registry']
+      // },
+      // cc_css_js: {
+      //   args: ['cc', 'css-js']
+      // },
      },
 
     watch: {
