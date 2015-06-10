@@ -1,24 +1,14 @@
-(function ($, Drupal) {
-  Drupal.behaviors.module = {
-    attach: function(context, settings) {
-      var basePath = Drupal.settings.basePath;
-      var pathToTheme = Drupal.settings.pathToTheme;
+(function ($, Drupal) { Drupal.behaviors.THEMENAME = { attach: function(context, settings) {
+var basePath = Drupal.settings.basePath;
+var pathToTheme = Drupal.settings.pathToTheme;
 
-      // code goes here
-       
-    }//End attach
-  };//End drupal behaviors
-})(jQuery, Drupal);//End function
+// Modulename One Goes Here
+ $("test1");
 
+// Modulenametwo Goes Here
+$("test2");
 
-(function ($, Drupal) {
-  Drupal.behaviors.modulenametwo = {
-    attach: function(context, settings) {
-      var basePath = Drupal.settings.basePath;
-      var pathToTheme = Drupal.settings.pathToTheme;
+// new module
+ $("new_module")
 
-      // code goes here
- 
-    }//End attach
-  };//End drupal behaviors
-})(jQuery, Drupal);//End function 
+}};})(jQuery, Drupal);

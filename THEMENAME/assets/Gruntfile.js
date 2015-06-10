@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    theme_name: 'THEMENAME', //Change this to your theme name
     pkg: grunt.file.readJSON('package.json'),
 
     sass: {
@@ -17,8 +18,9 @@ module.exports = function(grunt) {
 
     concat: {
       options: {
-        separator: '\n\n\n',
-        // sourceMap: true
+        separator: '\n\n',
+        banner: '(function ($, Drupal) { Drupal.behaviors.<%= theme_name %> = { attach: function(context, settings) {\nvar basePath = Drupal.settings.basePath;\nvar pathToTheme = Drupal.settings.pathToTheme;\n\n',
+        footer: '\n\n}};})(jQuery, Drupal);',
       },
       dist: {
         src: 'js/modules/*.js',
@@ -29,7 +31,7 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         options: {
-          mangle: false
+          mangle: false 
         },
         files: {
           'js/app.min.js': 'js/app.js'
@@ -38,12 +40,15 @@ module.exports = function(grunt) {
     },
 
     drush: {
-       cc_theme_registry: {
-         args: ['cc', 'theme-registry']
-       },
-       cc_css_js: {
-         args: ['cc', 'css-js']
-       }
+      cc_theme_registry: {
+        args: ['cc', 'theme-registry']
+      },
+      cc_css_js: {
+        args: ['cc', 'css-js']
+      },
+      cc_registry: {
+        args: ['cc', 'registry']
+      }
      },
 
     watch: {
@@ -58,18 +63,10 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['js/**/*.js'],
-        tasks: ['concat', 'uglify'],
+        tasks: ['concat'],
         options: {
           spawn: false,
         }
-      },
-      templates: {
-        files: '../templates/*.tpl.php',
-        tasks: ['drush:cc_theme_registry']
-      },
-      includes: {
-        files: ['/sites/all/modules/custom/**/*.inc', '/sites/all/modules/custom/**/*.info'],
-        tasks: ['drush:cc_registry'],
       }
     }
   });
@@ -81,5 +78,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['sass', 'concat', 'uglify']);
-  grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('drush', ['drush']);
+  grunt.registerTask('default', ['watch']);
 }
